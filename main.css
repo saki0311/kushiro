@@ -1,0 +1,20 @@
+
+h1{
+    text-align: center;
+    /* color: aqua; */
+}
+
+.student{
+    text-align: center;
+}
+.grade {
+    display: inline-block;
+}
+
+.name{
+    display: inline-block;
+}
+
+.status{
+    display: inline-block;
+}
