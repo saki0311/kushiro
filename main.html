@@ -1,5 +1,8 @@
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <link rel="stylesheet" href="main.css">
     </head>
     
@@ -10,7 +13,7 @@
             <div class="student">
                 <p class="grade">D3</p>
                 <p class="name">妻鹿</p>
-                <p class="status kitaku">帰宅</p>
+                <p data-target="modal1" class="waves-effect modal-trigger status kitaku">帰宅</p>
             </div>
 
             <div class="student">
@@ -61,6 +64,26 @@
                 <p class="status kitaku">帰宅</p>
             </div>
         </div>
+
+        <!-- modal window -->
+        {% comment %} ここがモーダル画面なのでサイズ変更お願いします。byのり {% endcomment %}
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <a class="waves-effect waves-light btn-large red accent-3"><i class="material-icons left">child_care</i>在室</a>
+                <a class="waves-effect waves-light btn-large teal accent-4"><i class="material-icons right">home</i>帰宅</a>
+                <a class="waves-effect waves-light btn-large amber darken-2"><i class="material-icons left">airline_seat_flat</i>学内</a>
+                <a class="waves-effect waves-light btn-large light-blue darken-2"><i class="material-icons right">airplanemode_active</i>学外</a>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
+        </div>
     </body>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+</script>
 </html>
