@@ -6,16 +6,13 @@
         <link rel="stylesheet" href="main.css">
     </head>
     
-    <body>    
+    <body onload="no_scroll();">    
+        
         <div id="field">
             <h1>在室表</h1>
 
             <!-- 日付の表示 -->
             <span id="view-time"></span>
-
-            <script type="text/javascript">
-
-            </script>
         
             <div class="student">
                 <p class="grade">D3 </p>
@@ -152,6 +149,27 @@
         //出力用
         var s = year + "/" + mon + "/" + day + "(" + youbi[you] + ")　" + hour + ":" + min;  
         return s;
+    }
+
+
+    // スクロール禁止
+    function no_scroll() {
+        // PCでのスクロール禁止
+        document.addEventListener("mousewheel", scroll_control, { passive: false });
+        // スマホでのタッチ操作でのスクロール禁止
+        document.addEventListener("touchmove", scroll_control, { passive: false });
+    }
+    // スクロール禁止解除
+    function return_scroll() {
+        // PCでのスクロール禁止解除
+        document.removeEventListener("mousewheel", scroll_control, { passive: false });
+        // スマホでのタッチ操作でのスクロール禁止解除
+        document.removeEventListener('touchmove', scroll_control, { passive: false });
+    }
+
+    // スクロール関連メソッド
+    function scroll_control(event) {
+        event.preventDefault();
     }
 </script>
 </html>
