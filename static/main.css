@@ -30,8 +30,7 @@ body{
 
 #field{
     /* margin:0% 10%; */
-    padding: 7% 5%;
-    padding-bottom: 15%;
+    padding: 13% 5%;
     background-color: #E6E7E8;
     opacity: 0.9;
 }
@@ -111,4 +110,3 @@ body{
 #icon{
     font-size: 100px;
 }
-
