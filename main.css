@@ -9,6 +9,10 @@ h1{
     text-decoration:underline;
 }
 
+#view_time{
+    text-align: center;
+}
+
 body{
     /* 背景画像 */
     background-image: url("tiktokのり.jpg");
