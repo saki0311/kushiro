@@ -75,3 +75,23 @@ body{
     background-color: #ffa000;
     color:white;
 }
+
+.modal{
+    width:850px;
+    height:1200px;
+    /* padding-top:20px; */
+}
+
+.modal-table{
+    width:852px;
+    height:700px;
+}
+
+.button{
+    font-size:100px;
+    line-height: 380px;
+    /* ボタンの大きさ */
+    width: 400px;
+    height: 400px;
+}
+
