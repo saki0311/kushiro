@@ -17,55 +17,55 @@
             <div class="student">
                 <p class="grade">D3 </p>
                 <p class="name">妻鹿</p>
-                <p id="test_1" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="test(1);">帰宅</p>
+                <p id="member_1" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="ConnectMemberId(1);">帰宅</p>
             </div>
 
             <div class="student">
                 <p class="grade">M2</p>
                 <p class="name">緒方</p>
-                <p id="test_2" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="test(2);">帰宅</p>
+                <p id="member_2" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="ConnectMemberId(2);">帰宅</p>
             </div>
 
             <div class="student">
                 <p class="grade">M2</p>
                 <p class="name">益井</p>
-                <p id="test_3" data-target="modal1" class="waves-effect modal-trigger status zaishitsu" onclick="test(3);">在室</p>
+                <p id="member_3" data-target="modal1" class="waves-effect modal-trigger status zaishitsu" onclick="ConnectMemberId(3);">在室</p>
             </div>
 
             <div class="student">
                 <p class="grade">M2</p>
                 <p class="name">村上</p>
-                <p id="test_4" data-target="modal1" class="waves-effect modal-trigger status zaishitsu" onclick="test(4);">在室</p>
+                <p id="member_4" data-target="modal1" class="waves-effect modal-trigger status zaishitsu" onclick="ConnectMemberId(4);">在室</p>
             </div>
 
             <div class="student">
                 <p class="grade">M2</p>
                 <p class="name">吉井</p>
-                <p id="test_5" data-target="modal1" class="waves-effect modal-trigger status gakugai" onclick="test(5);">学外</p>
+                <p id="member_5" data-target="modal1" class="waves-effect modal-trigger status gakugai" onclick="ConnectMemberId(5);">学外</p>
             </div>
 
             <div class="student">
                 <p class="grade">M1</p>
                 <p class="name">若松</p>
-                <p id="test_6" data-target="modal1" class="waves-effect modal-trigger status gakunai" onclick="test(6);">学内</p>
+                <p id="member_6" data-target="modal1" class="waves-effect modal-trigger status gakunai" onclick="ConnectMemberId(6);">学内</p>
             </div>
 
             <div class="student">
                 <p class="grade">B4</p>
                 <p class="name">？？</p>
-                <p id="test_7" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="test(7);">帰宅</p>
+                <p id="member_7" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="ConnectMemberId(7);">帰宅</p>
             </div>
 
             <div class="student">
                 <p class="grade">B4</p>
                 <p class="name">？？</p>
-                <p id="test_8" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="test(8);">帰宅</p>
+                <p id="member_8" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="ConnectMemberId(8);">帰宅</p>
             </div>
 
             <div class="student">
                 <p class="grade">B4</p>
                 <p class="name">？？</p>
-                <p id="test_9" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="test(9);">帰宅</p>
+                <p id="member_9" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="ConnectMemberId(9);">帰宅</p>
             </div>
         </div>
 
@@ -91,13 +91,13 @@
     var elems = document.querySelectorAll('.modal');
     var instances = M.Modal.init(elems);
   });
-  function test(index){
+  function ConnectMemberId(index){
       modal = document.getElementById("modal_index"); // モーダルの取得
       modal.value = index; // モーダルのインデックスを固定
   }
   function ChangeStatus(status){
       var item = document.getElementById("modal_index").value;
-      var id = "test_"+item;
+      var id = "member_"+item;
       target = document.getElementById(id);
       switch(status){
           case 0:
