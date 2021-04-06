@@ -8,10 +8,10 @@
     
     <body>    
         <div id="field">
-            <h1>メンバー</h1>
+            <h1>在室表</h1>
         
             <div class="student">
-                <p class="grade">D3</p>
+                <p class="grade">D3 </p>
                 <p class="name">妻鹿</p>
                 <p id="test_1" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="test(1);">帰宅</p>
             </div>
@@ -69,10 +69,10 @@
         <!-- ここがモーダル画面なのでサイズ変更お願いします。byのり -->
         <div id="modal1" class="modal">
             <div id="modal_content" class="modal-table modal-content">
-                <a class="button modal-close waves-effect waves-light btn-large red accent-3" onclick="ChangeStatus(0);"><i class="material-icons left">child_care</i>在室</a>
-                <a class="button modal-close waves-effect waves-light btn-large teal accent-4" onclick="ChangeStatus(1);"><i class="material-icons right">home</i>帰宅</a>
-                <a class="button modal-close waves-effect waves-light btn-large amber darken-2" onclick="ChangeStatus(2);"><i class="material-icons left">airline_seat_flat</i>学内</a>
-                <a class="button modal-close waves-effect waves-light btn-large light-blue darken-2" onclick="ChangeStatus(3);"><i class="material-icons right">airplanemode_active</i>学外</a>
+                <a class="button modal-close waves-effect waves-light btn-large red accent-3" onclick="ChangeStatus(0);"><i id="icon" class="material-icons left">child_care</i>在室</a>
+                <a class="button modal-close waves-effect waves-light btn-large teal accent-4" onclick="ChangeStatus(1);"><i id="icon" class="material-icons right">home</i>帰宅</a>
+                <a class="button modal-close waves-effect waves-light btn-large amber darken-2" onclick="ChangeStatus(2);"><i id="icon" class="material-icons left">airline_seat_flat</i>学内</a>
+                <a class="button modal-close waves-effect waves-light btn-large light-blue darken-2" onclick="ChangeStatus(3);"><i id="icon" class="material-icons right">airplanemode_active</i>学外</a>
             </div>
             <!-- <div class="modal-footer">
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
