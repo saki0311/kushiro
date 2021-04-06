@@ -26,7 +26,7 @@ body{
 
 .student{
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     /* height: 80px;  */
     
 }
@@ -44,33 +44,33 @@ body{
 }
 
 .status{
-    margin-left: 20%;
+    margin-left: 15%;
     display: inline-block;
-    font-size: 18px;
+    font-size: 25px;
     vertical-align: middle;
     
 }
 
 .kitaku{
-    padding: 1% 15%;
+    padding: 3% 15%;
     background-color: #00bfa5;
     color:white;
 }
 
 .zaishitsu{
-    padding: 1% 15%;
+    padding: 3% 15%;
     background-color: #dc143c;
     color:white;
 }
 
 .gakugai{
-    padding: 1% 15%;
+    padding: 3% 15%;
     background-color: #0288d1;
     color:white;
 }
 
 .gakunai{
-    padding: 1% 15%;
+    padding: 3% 15%;
     background-color: #ffa000;
     color:white;
 }
