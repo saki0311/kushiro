@@ -1,0 +1,112 @@
+
+
+
+h1{
+    text-align: center;
+    font-size:50px;
+    padding-top:1%;
+    padding-bottom:1%;
+    text-decoration:underline;
+}
+
+#view-time{
+    text-align:center;
+    font-size:30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 47%;
+    display: block;
+}
+
+body{
+    /* 背景画像 */
+    background-image: url("tiktok_nori.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+#field{
+    /* margin:0% 10%; */
+    padding: 13% 5%;
+    background-color: #E6E7E8;
+    opacity: 0.9;
+}
+
+.student{
+    text-align: center;
+    font-size: 40px;
+    height: 8%; 
+    
+}
+.grade {
+    display: inline-block;
+    font-family:Hiragino Kaku Gothic Pro;
+    vertical-align: middle
+}
+
+.name{
+    margin-left: 2%;
+    display: inline-block;
+    font-family:Hiragino Kaku Gothic Pro;
+    vertical-align: middle
+}
+
+.status{
+    margin-left: 15%;
+    display: inline-block;
+    font-size: 25px;
+    vertical-align: middle;
+    
+}
+
+.kitaku{
+    padding: 3% 15%;
+    background-color: #00bfa5;
+    color:white;
+    opacity: 1;
+}
+
+.zaishitsu{
+    padding: 3% 15%;
+    background-color: #dc143c;
+    color:white;
+}
+
+.gakugai{
+    padding: 3% 15%;
+    background-color: #0288d1;
+    color:white;
+}
+
+.gakunai{
+    padding: 3% 15%;
+    background-color: #ffa000;
+    color:white;
+}
+
+.modal{
+    width:850px;
+    height:1200px;
+    /* padding-top:20px; */
+}
+
+.modal-table{
+    width:852px;
+    height:700px;
+}
+
+.button{
+    font-size:100px;
+    line-height: 380px;
+    /* ボタンの大きさ */
+    width: 400px;
+    height: 400px;
+}
+
+
+#icon{
+    font-size: 100px;
+}

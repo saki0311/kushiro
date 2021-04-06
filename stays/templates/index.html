@@ -1,0 +1,177 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- <link rel="stylesheet" href="main.css"> -->
+        <link href="{% static 'main.css' %}" rel="stylesheet">
+    </head>
+    
+    <body onload="no_scroll();">    
+        
+        <div id="field">
+            <h1>在室表</h1>
+
+            <!-- 日付の表示 -->
+            <span id="view-time"></span>
+        
+            <div class="student">
+                <p class="grade">D3 </p>
+                <p class="name">妻鹿</p>
+                <p id="member_1" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="ConnectMemberId(1);">帰宅</p>
+            </div>
+
+            <div class="student">
+                <p class="grade">M2</p>
+                <p class="name">緒方</p>
+                <p id="member_2" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="ConnectMemberId(2);">帰宅</p>
+            </div>
+
+            <div class="student">
+                <p class="grade">M2</p>
+                <p class="name">益井</p>
+                <p id="member_3" data-target="modal1" class="waves-effect modal-trigger status zaishitsu" onclick="ConnectMemberId(3);">在室</p>
+            </div>
+
+            <div class="student">
+                <p class="grade">M2</p>
+                <p class="name">村上</p>
+                <p id="member_4" data-target="modal1" class="waves-effect modal-trigger status zaishitsu" onclick="ConnectMemberId(4);">在室</p>
+            </div>
+
+            <div class="student">
+                <p class="grade">M2</p>
+                <p class="name">吉井</p>
+                <p id="member_5" data-target="modal1" class="waves-effect modal-trigger status gakugai" onclick="ConnectMemberId(5);">学外</p>
+            </div>
+
+            <div class="student">
+                <p class="grade">M1</p>
+                <p class="name">若松</p>
+                <p id="member_6" data-target="modal1" class="waves-effect modal-trigger status gakunai" onclick="ConnectMemberId(6);">学内</p>
+            </div>
+
+            <div class="student">
+                <p class="grade">B4</p>
+                <p class="name">？？</p>
+                <p id="member_7" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="ConnectMemberId(7);">帰宅</p>
+            </div>
+
+            <div class="student">
+                <p class="grade">B4</p>
+                <p class="name">？？</p>
+                <p id="member_8" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="ConnectMemberId(8);">帰宅</p>
+            </div>
+
+            <div class="student">
+                <p class="grade">B4</p>
+                <p class="name">？？</p>
+                <p id="member_9" data-target="modal1" class="waves-effect modal-trigger status kitaku" onclick="ConnectMemberId(9);">帰宅</p>
+            </div>
+        </div>
+
+        <!-- modal window -->
+        <!-- ここがモーダル画面なのでサイズ変更お願いします。byのり -->
+        <div id="modal1" class="modal">
+            <div id="modal_content" class="modal-table modal-content">
+                <a class="button modal-close waves-effect waves-light btn-large red accent-3" onclick="ChangeStatus(0);"><i id="icon" class="material-icons left">child_care</i>在室</a>
+                <a class="button modal-close waves-effect waves-light btn-large teal accent-4" onclick="ChangeStatus(1);"><i id="icon" class="material-icons right">home</i>帰宅</a>
+                <a class="button modal-close waves-effect waves-light btn-large amber darken-2" onclick="ChangeStatus(2);"><i id="icon" class="material-icons left">airline_seat_flat</i>学内</a>
+                <a class="button modal-close waves-effect waves-light btn-large light-blue darken-2" onclick="ChangeStatus(3);"><i id="icon" class="material-icons right">airplanemode_active</i>学外</a>
+            </div>
+            <!-- <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div> -->
+        </div>
+
+        <input id="modal_index" type="hidden" value="">
+    </body>
+"
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+  function ConnectMemberId(index){
+      modal = document.getElementById("modal_index"); // モーダルの取得
+      modal.value = index; // モーダルのインデックスを固定
+  }
+  function ChangeStatus(status){
+      var item = document.getElementById("modal_index").value;
+      var id = "member_"+item;
+      target = document.getElementById(id);
+      switch(status){
+          case 0:
+            target.className = "waves-effect modal-trigger status zaishitsu";
+            target.textContent = "在室";
+            break;
+          case 1:
+            target.className = "waves-effect modal-trigger status kitaku";
+            target.textContent = "帰宅";
+            break;
+          case 2:
+            target.className = "waves-effect modal-trigger status gakunai";
+            target.textContent = "学内";
+            break;
+          case 3:
+            target.className = "waves-effect modal-trigger status gakugai";
+            target.textContent = "学外";
+            break;
+          default:
+            target.className = "waves-effect modal-trigger status kitaku";
+            target.textContent = "帰宅";
+            break;
+      }
+  };
+
+    //日付表示 
+    timerID = setInterval('clock()',500); //0.5秒毎にclock()を実行
+
+    function clock() {
+        document.getElementById("view-time").innerHTML = getNow();
+    }
+
+    function getNow() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var mon = now.getMonth()+1; //１を足すこと
+        var day = now.getDate();
+        var you = now.getDay(); //曜日(0～6=日～土)
+        var hour = now.getHours();
+        var min = now.getMinutes();
+        var sec = now.getSeconds();
+
+        //曜日の選択肢
+        var youbi = new Array("日","月","火","水","木","金","土");
+
+        // 分の0埋め
+        min = ('0' + min).slice(-2);
+
+        //出力用
+        var s = year + "/" + mon + "/" + day + "(" + youbi[you] + ")　" + hour + ":" + min;  
+        return s;
+    }
+
+
+    // スクロール禁止
+    function no_scroll() {
+        // PCでのスクロール禁止
+        document.addEventListener("mousewheel", scroll_control, { passive: false });
+        // スマホでのタッチ操作でのスクロール禁止
+        document.addEventListener("touchmove", scroll_control, { passive: false });
+    }
+    // スクロール禁止解除
+    function return_scroll() {
+        // PCでのスクロール禁止解除
+        document.removeEventListener("mousewheel", scroll_control, { passive: false });
+        // スマホでのタッチ操作でのスクロール禁止解除
+        document.removeEventListener('touchmove', scroll_control, { passive: false });
+    }
+
+    // スクロール関連メソッド
+    function scroll_control(event) {
+        event.preventDefault();
+    }
+</script>
+</html>
