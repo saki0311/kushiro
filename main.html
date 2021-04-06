@@ -6,8 +6,7 @@
         <link rel="stylesheet" href="main.css">
     </head>
     
-    <body onload="no_scroll();">    
-        
+    <body onload="no_scroll();">    <!-- onloadでスクロールを禁止にしてます。 -->        
         <div id="field">
             <h1>在室表</h1>
 
@@ -84,8 +83,12 @@
         </div>
 
         <input id="modal_index" type="hidden" value="">
+
+
+        <!-- 喋るのり -->
+        <!-- <img src="talknori.png" id="image-place"> -->
     </body>
-"
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
@@ -151,7 +154,7 @@
         return s;
     }
 
-
+    //********************************** スクロール↓
     // スクロール禁止
     function no_scroll() {
         // PCでのスクロール禁止
@@ -171,5 +174,16 @@
     function scroll_control(event) {
         event.preventDefault();
     }
+    //********************************** スクロール↑
+
+    //********************************** 喋るのり↓
+    // var img = document.getElementById("image_place");
+    // img.style.display = "none";
+    // function ChangeStatus(){
+    // img.style.display = "block";
+    // }
+
+    //********************************** 喋るのり↑
+
 </script>
 </html>
